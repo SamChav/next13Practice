@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
   <>
-  <Link href="/"><div className={styles.homeDiv}>YOOOOOOOOOOOOOOOOOO</div></Link>
+<div className={styles.homeDiv}>YOOOOOOOOOOOOOOOOOO</div>
     <Link href="/ping">play Ping</Link>
     </>
   )
