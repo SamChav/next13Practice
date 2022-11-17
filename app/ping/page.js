@@ -4,7 +4,7 @@ import Link from "next/link";
 const Ping = () => {
   let [locX, setLocX] = useState();
   let [locY, setLocY] = useState();
-  let [circles, setCircles] = useState([])
+  let [circles, setCircles] = useState([]);
   let [counter, setCounter] = useState(-1);
   // ping div keeps resetting, figure that out state needs to be persistent -- need a map
   const mouseController = (e) => {
@@ -20,28 +20,41 @@ const Ping = () => {
   };
 
   const newCircle = (e) => {
-    let x = e.pageX.toString() + "px"
-    let y = e.pageY.toString() + "px"
+    let x = e.pageX.toString() + "px";
+    let y = e.pageY.toString() + "px";
+    const randomNumber = () => {
+      return Math.random() * (255 - 1) + 1;
+    };
+    const mathColor =
+      "rgb" +
+      "(" +
+      Math.floor(randomNumber()).toString() +
+      ", " +
+      Math.floor(randomNumber()).toString() +
+      ", " +
+      Math.floor(randomNumber()).toString() +
+      ")";
+    console.log(mathColor);
     let newCircle = (
-    <div
-    key={circles.length + 1}
-    style={{
-      height: "25px",
-      width: "25px",
-      borderRadius: "10px",
-      background: "black",
-      position: "absolute",
-      left: `${x}`,
-      top: `${y}`,
-    }}
-  ></div>
-  )
+      <div
+        key={circles.length + 1}
+        style={{
+          height: "25px",
+          width: "25px",
+          borderRadius: "10px",
+          background: mathColor,
+          position: "absolute",
+          left: `${x}`,
+          top: `${y}`,
+        }}
+      ></div>
+    );
 
-  let totalCircles = [...circles, newCircle]
+    let totalCircles = [...circles, newCircle];
 
-    setCircles(totalCircles)
-  }
- console.log(circles)
+    setCircles(totalCircles);
+  };
+  console.log(circles);
 
   return (
     <>
