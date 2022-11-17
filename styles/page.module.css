@@ -1,0 +1,9 @@
+.homeDiv {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    background-color: black;
+    color: white;
+}
